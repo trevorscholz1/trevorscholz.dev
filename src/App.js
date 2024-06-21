@@ -9,7 +9,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <a href="https://github.com/trevorscholz1/trevorscholz1" target="_blank" rel="noopener noreferrer" className="github-link">
+              <a href="https://github.com/trevorscholz1/Portfolio" target="_blank" rel="noopener noreferrer" className="github-link">
                 GitHub
               </a>
             </li>
