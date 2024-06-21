@@ -22,6 +22,27 @@ body {
   margin: 0;
 }
 
+.about-me {
+  background-color: #3c0707;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 800px;
+  text-align: left;
+  color: #fff;
+}
+
+.about-me h2 {
+  font-size: 2rem;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+.about-me p {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
 nav ul {
   list-style: none;
   margin: 0;

@@ -17,6 +17,12 @@ function App() {
         </nav>
       </header>
       <main>
+      <section className="about-me">
+        <h2>About Me</h2>
+        <p>
+          I'm a Computer Science student at the University of Maryland, specializing in Data Science and minoring in Astronomy. My interests lie in machine learning, statistics, and data science. I enjoy combining my skills to tackle real-world problems and personal projects.
+        </p>
+      </section>
       <h1>View open-source code for all projects on my GitHub (Linked at top-right)</h1>
         <section className="project">
           <h2>Astronomy</h2>
