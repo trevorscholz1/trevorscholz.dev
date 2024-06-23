@@ -43,7 +43,7 @@ function App() {
         <section className="project">
           <h2>Daily Lockz</h2>
           <h3>Website</h3>
-          <img src="/DailyLockzWeb" alt="Daily Lockz Screenshot" />
+          <img src="/DailyLockzWeb.png" alt="Daily Lockz Screenshot" />
           <p>The Daily Lockz Website presents predicted sports scores for all major sports.
             It uses the advanced neural network described below to allow users to view trustworthy predictions
             of their favorite upcoming games.
