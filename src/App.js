@@ -10,7 +10,7 @@ function App() {
           <ul>
             <li>
               <a href="https://github.com/trevorscholz1/Portfolio" target="_blank" rel="noopener noreferrer" className="github-link">
-                GitHub
+                <img src="/github-icon.png" alt="Github" className="social-icon" />
               </a>
             </li>
           </ul>
@@ -22,15 +22,26 @@ function App() {
         <p>
         Hey, I'm Trevor, a Computer Science student at the University of Maryland, 
         where I specialize in Data Science and get to build on my love for stargazing through my Astronomy minor. 
-        My academic journey is fueled by a fascination with machine learning, statistics, and the vast potential of data science.
-      But I'm not just about crunching numbers and coding. I always enjoy trying to merge my passions with my projects. 
-      Whether it's developing sports betting models that actually work, clustering Spotify tracks by mood, or creating a poker bot 
-      that could give pros a run for their money, I love bringing a personal touch to my personal projects.
-      Believe it or not, I am not always immersed in coding and developing. I enjoy playing and watching my favorite sports
-      which include basketball, soccer, and golf. I also love listening to music and sometimes even making my own.
-      And if the night is clear? I love looking up at the stars when I get the chance and try to grasp how unreal
-      our universe really is.
+        My academic journey is fueled by a fascination with machine learning, statistics, and data science. 
+        I always enjoy trying to merge my passions with my projects.
+        Whether it's developing sports betting models that actually work, clustering Spotify tracks by mood, or creating a poker bot 
+        that could give pros a run for their money, I love implementing my personal interests into my projects to make
+        them unique and useful. Believe it or not, I am not always immersed in coding and developing. I enjoy playing and watching my favorite sports
+        which include basketball, soccer, and golf. I also love listening to music and sometimes even making my own.
+        And if the night is clear? I love looking up at the stars when I get the chance and try to grasp how unreal
+        our universe really is. Feel free to get in touch!
         </p>
+        <div className="social-links">
+            <a href="https://www.linkedin.com/in/trevor-scholz-014794258/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src="/linkedin-icon.png" alt="LinkedIn" className="social-icon" />
+            </a>
+            <a href="mailto:trevorscholz1@icloud.com" aria-label="Email">
+              <img src="/email-icon.png" alt="Email" className="social-icon" />
+            </a>
+            <a href="https://github.com/trevorscholz1/Portfolio/blob/main/TrevorScholzResume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">
+              <img src="/resume-icon.png" alt="Resume" className="social-icon" />
+            </a>
+          </div>
       </section>
       <h1>View open-source code for all projects on my GitHub (Linked at top-right)</h1>
         <section className="project">
