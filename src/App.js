@@ -43,8 +43,12 @@ function App() {
         <section className="project">
           <h2>Daily Lockz</h2>
           <h3>Website</h3>
-          <img src="" alt="Daily Lockz Screenshot" />
-          <p>Coming Soon...</p>
+          <img src="/DailyLockzWeb" alt="Daily Lockz Screenshot" />
+          <p>The Daily Lockz Website presents predicted sports scores for all major sports.
+            It uses the advanced neural network described below to allow users to view trustworthy predictions
+            of their favorite upcoming games.
+          </p>
+          <p>Technology: React, NodeJS, JavaScript, Netlify</p>
           <h3>Backend</h3>
           <img src="/DailyLockzModelWeb.png" alt="Daily Lockz Screenshot" />
           <p>Sports betting, when it comes down to it, is all math.
