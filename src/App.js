@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('light-mode');
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Trevor Scholz</h1>
-        <nav>
-          <ul>
-            <li>
-              <a href="https://github.com/trevorscholz1/Portfolio" target="_blank" rel="noopener noreferrer" className="github-link">
-                <img src="/github-icon.png" alt="Github" className="social-icon" />
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <button onClick={toggleDarkMode} className="theme-toggle">
+          {darkMode ? '☀️' : '🌙'}
+        </button>
       </header>
       <main>
       <section className="about-me">
@@ -32,6 +41,9 @@ function App() {
         our universe really is. Feel free to get in touch!
         </p>
         <div className="social-links">
+            <a href="https://github.com/trevorscholz1/Portfolio" target="_blank" rel="noopener noreferrer" aria-label="Github">
+              <img src="/github-icon.png" alt="Github" className="social-icon" />
+            </a>
             <a href="https://www.linkedin.com/in/trevor-scholz-014794258/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <img src="/linkedin-icon.png" alt="LinkedIn" className="social-icon" />
             </a>
@@ -43,17 +55,21 @@ function App() {
             </a>
           </div>
       </section>
-      <h1>View open-source code for all projects on my GitHub (Linked at top-right)</h1>
+      <h1>Click on the images to view the code on my Github!</h1>
         <section className="project">
           <h2>Astronomy</h2>
           <h3>App</h3>
-          <img src="/AstroWorldWeb.png" alt="Astronomy Screenshot" />
+          <a href="https://github.com/trevorscholz1/Portfolio/tree/main/astronomy" target="_blank" rel="noopener noreferrer">
+            <img src="/AstroWorldWeb.png" alt="Astronomy Screenshot" className="project-icon"/>
+          </a>
           <p>AstroWorld is an app I have created in Xcode, Swift, and SwiftUI. It utilizes NASA's open API's to create an 
             all in one astronomy app for astronomers of all interest levels get detailed information right from their phone. 
             It gathers data from complex API's and displays them in an easy to view UI for users.</p>
           <p>Technology: Xcode, Swift, SwiftUI, RESTful APIS</p>
           <h3>Backend</h3>
-          <img src="/AstronomyWeb.png" alt="Astronomy Screenshot" />
+          <a href="https://github.com/trevorscholz1/Portfolio/tree/main/astronomy" target="_blank" rel="noopener noreferrer">
+            <img src="/AstronomyWeb.png" alt="Astronomy Screenshot" className="project-icon"/>
+          </a>
           <p>In Jupyter Notebook and Python, I have developed a simple script to gather data from constellations and compute 
             simple calculations
             like determining the brightest star out of the data.
@@ -63,14 +79,18 @@ function App() {
         <section className="project">
           <h2>Daily Lockz</h2>
           <h3>Website</h3>
-          <img src="/DailyLockzWeb.png" alt="Daily Lockz Screenshot" />
+          <a href="https://github.com/trevorscholz1/Portfolio/tree/main/daily_lockz" target="_blank" rel="noopener noreferrer">
+            <img src="/DailyLockzWeb.png" alt="Daily Lockz Screenshot" className="project-icon"/>
+          </a>
           <p>The Daily Lockz Website presents predicted sports scores for all major sports.
             It uses the advanced neural network described below to allow users to view trustworthy predictions
             of their favorite upcoming games.
           </p>
           <p>Technology: React, NodeJS, JavaScript, Netlify</p>
           <h3>Backend</h3>
-          <img src="/DailyLockzModelWeb.png" alt="Daily Lockz Screenshot" />
+          <a href="https://github.com/trevorscholz1/Portfolio/tree/main/daily_lockz" target="_blank" rel="noopener noreferrer">
+            <img src="/DailyLockzModelWeb.png" alt="Daily Lockz Screenshot" className="project-icon"/>
+          </a>
           <p>Sports betting, when it comes down to it, is all math.
             I have created this Python script that utilizes machine learning techniques to predict the outcomes of various sports events, 
             including soccer, baseball, basketball, football, and hockey games. It fetches data from an odds API, preprocesses the data, 
@@ -91,7 +111,9 @@ function App() {
         </section> */}
         <section className="project">
           <h2>Golf</h2>
-          <img src="/GolfWeb.png" alt="Golf Screenshot" />
+          <a href="https://github.com/trevorscholz1/Portfolio/tree/main/golf" target="_blank" rel="noopener noreferrer">
+            <img src="/GolfWeb.png" alt="Golf Screenshot" className="project-icon"/>
+          </a>
           <p>First, I wanted to develop my skills in Ruby, which was a new language to me.
             I decided to create a simple program that acts as a golf scorecard. Then, I decided
             to further my app developement skills and create an IOS golf scorecard app as well.</p>
@@ -99,7 +121,9 @@ function App() {
         </section>
         <section className="project">
           <h2>Clusterfy</h2>
-          <img src="/ClusterfyWeb.png" alt="Clusterfy Screenshot" />
+          <a href="https://github.com/trevorscholz1/Portfolio/tree/main/spotify" target="_blank" rel="noopener noreferrer">
+            <img src="/ClusterfyWeb.png" alt="Spotify Screenshot" className="project-icon"/>
+          </a>
           <p>Clusterfy uses K-Means clustering from Scikit-Learn to group songs from a specified artist into clusters. 
             The clusters are then displayed in a pandas dataframe, and saved as a csv to be used in Xcode to deploy to the app.
             Clusterfy supports over 100 of today's top artists for users to view, and many more coming in the future. Users can also
@@ -110,7 +134,9 @@ function App() {
           <h2>Extras</h2>
           <section className="sub-project">
             <h3>Poker</h3>
-            <img src="/PokerWeb.png" alt="Poker Screenshot" />
+            <a href="https://github.com/trevorscholz1/Portfolio/tree/main/extras/poker" target="_blank" rel="noopener noreferrer">
+            <img src="/PokerWeb.png" alt="Poker Screenshot" className="project-icon"/>
+          </a>
             <p>As you might have already been able to tell from my previous projects, I have a heavy interest in statistics
               and data science. So I decided to combine this with one of my favorite games: Poker. A winning Poker player
               will often have an idea of their chance of winning before making a decision. This program, created in Java, will
@@ -121,7 +147,9 @@ function App() {
           </section>
           <section className="sub-project">
             <h3>LEGO</h3>
-            <img src="/LegoWeb.png" alt="LEGO Screenshot" />
+            <a href="https://github.com/trevorscholz1/Portfolio/tree/main/extras/lego" target="_blank" rel="noopener noreferrer">
+            <img src="/LegoWeb.png" alt="LEGO Screenshot" className="project-icon"/>
+          </a>
             <p>In Rust, I created a LEGO Set Randomizer to build my ability to work with APIs and handle data in Rust. 
               It connects to the Rebrickable API to fetch information about LEGO sets, then randomly selects and displays details 
               about one set. The program utilizes asynchronous programming with tokio and reqwest for efficient API requests, 
