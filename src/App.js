@@ -3,6 +3,7 @@ import './App.css';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     if (darkMode) {
@@ -12,6 +13,20 @@ function App() {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scroll = `${totalScroll / windowHeight * 100}%`;
+
+      setScrollProgress(scroll);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     document.body.classList.toggle('light-mode');
@@ -19,6 +34,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="scroll-progress" style={{width: scrollProgress}}></div>
       <header className="App-header">
         <h1>Trevor Scholz</h1>
         <button onClick={toggleDarkMode} className="theme-toggle">
@@ -86,7 +102,7 @@ function App() {
             It uses the advanced neural network described below to allow users to view trustworthy predictions
             of their favorite upcoming games.
           </p>
-          <p>Technology: React, NodeJS, JavaScript, Netlify</p>
+          <p>Technology: React, NodeJS, JavaScript, HTML, CSS, Netlify</p>
           <h3>Backend</h3>
           <a href="https://github.com/trevorscholz1/Portfolio/tree/main/daily_lockz" target="_blank" rel="noopener noreferrer">
             <img src="/DailyLockzModelWeb.png" alt="Daily Lockz Screenshot" className="project-icon"/>
@@ -128,7 +144,7 @@ function App() {
             The clusters are then displayed in a pandas dataframe, and saved as a csv to be used in Xcode to deploy to the app.
             Clusterfy supports over 100 of today's top artists for users to view, and many more coming in the future. Users can also
             click on a song directly in the app to listen to it on spotify and add it to their own playlists.</p>
-          <p>Technology: Spotipy, Pandas, Python, Scikit-Learn</p>
+          <p>Technology: Spotipy, Pandas, Python, Scikit-Learn, Swift, SwiftUI</p>
         </section>
         <section className="project">
           <h2>Extras</h2>

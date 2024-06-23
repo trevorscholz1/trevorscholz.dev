@@ -16,6 +16,16 @@
   --hover-color: #ff0000;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8px;
+  background-color: var(--accent-color);
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
 /* General Styles */
 body {
   font-family: 'Montserrat', sans-serif;
@@ -30,6 +40,7 @@ body {
 .App-header {
   background-color: var(--header-bg);
   padding: 20px;
+  padding-top: 24px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
