@@ -23,24 +23,40 @@ body {
 }
 
 .about-me {
-  background-color: #3c0707;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 10px;
+  background-color: #111;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 15px;
   max-width: 800px;
   text-align: left;
   color: #fff;
+  box-shadow: 0 4px 6px rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-me:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(255, 0, 0, 0.2);
 }
 
 .about-me h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #ff0000;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .about-me p {
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+}
+
+.about-me p:last-child {
+  margin-bottom: 0;
 }
 
 nav ul {

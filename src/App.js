@@ -20,7 +20,16 @@ function App() {
       <section className="about-me">
         <h2>About Me</h2>
         <p>
-          I'm a Computer Science student at the University of Maryland, specializing in Data Science and minoring in Astronomy. My interests lie in machine learning, statistics, and data science. I enjoy combining my skills to tackle real-world problems and personal projects.
+        Hey, I'm Trevor, a Computer Science student at the University of Maryland, 
+        where I specialize in Data Science and get to build on my love for stargazing through my Astronomy minor. 
+        My academic journey is fueled by a fascination with machine learning, statistics, and the vast potential of data science.
+      But I'm not just about crunching numbers and coding. I always enjoy trying to merge my passions with my projects. 
+      Whether it's developing sports betting models that actually work, clustering Spotify tracks by mood, or creating a poker bot 
+      that could give pros a run for their money, I love bringing a personal touch to my personal projects.
+      Believe it or not, I am not always immersed in coding and developing. I enjoy playing and watching my favorite sports
+      which include basketball, soccer, and golf. I also love listening to music and sometimes even making my own.
+      And if the night is clear? I love looking up at the stars when I get the chance and try to grasp how unreal
+      our universe really is.
         </p>
       </section>
       <h1>View open-source code for all projects on my GitHub (Linked at top-right)</h1>
