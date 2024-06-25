@@ -79,16 +79,21 @@ function App() {
             <img src="/AstroWorldWeb.png" alt="Astronomy Screenshot" className="project-icon"/>
           </a>
           <p>AstroWorld is an app I have created in Xcode, Swift, and SwiftUI. It utilizes NASA's open API's to create an 
-            all in one astronomy app for astronomers of all interest levels get detailed information right from their phone. 
-            It gathers data from complex API's and displays them in an easy to view UI for users.</p>
+            all in one astronomy app for astronomers of all interest levels to get detailed information right from their phone. 
+            It gathers data from complex API's and displays them in an easy to view UI for users. My favorite feature displayed above
+            is displaying NASA's Astronomy Picture of the Day</p>
           <p>Technology: Xcode, Swift, SwiftUI, RESTful APIS</p>
           <h3>Backend</h3>
           <a href="https://github.com/trevorscholz1/Portfolio/tree/main/astronomy" target="_blank" rel="noopener noreferrer">
             <img src="/AstronomyWeb.png" alt="Astronomy Screenshot" className="project-icon"/>
           </a>
-          <p>In Jupyter Notebook and Python, I have developed a simple script to gather data from constellations and compute 
-            simple calculations
-            like determining the brightest star out of the data.
+          <p>This Python script demonstrates a comprehensive approach to astronomical data analysis and visualization. 
+            It uses libraries such as NumPy, Pandas, Matplotlib, and Astropy to process and display information about different stars.
+            The code begins by creating a DataFrame with star names, coordinates (Right Ascension and Declination), and magnitudes.
+            It then leverages Astropy's SkyCoord to convert string representations of celestial coordinates into astronomical objects,
+            enabling precise calculations. A scatter plot is generated using Matplotlib, visually representing the stars' positions 
+            in the sky, with point sizes reflecting their brightness. The script also performs data analysis, identifying the 
+            brightest star in the set and calculating the angular separation between two specific stars. 
           </p>
           <p>Technology: Jupyter Notebook, Python, Pandas, NumPy, Matplotlib, Astropy</p>
         </section>
@@ -100,7 +105,8 @@ function App() {
           </a>
           <p>The Daily Lockz Website presents predicted sports scores for all major sports.
             It uses the advanced neural network described below to allow users to view trustworthy predictions
-            of their favorite upcoming games.
+            of their favorite upcoming games. It provides an easy to view UI which allows users to very easily
+            find the game their looking for, and what the final score is expected to be.
           </p>
           <p>Technology: React, NodeJS, JavaScript, HTML, CSS, Netlify</p>
           <h3>Backend</h3>
@@ -131,8 +137,9 @@ function App() {
             <img src="/GolfWeb.png" alt="Golf Screenshot" className="project-icon"/>
           </a>
           <p>First, I wanted to develop my skills in Ruby, which was a new language to me.
-            I decided to create a simple program that acts as a golf scorecard. Then, I decided
-            to further my app developement skills and create an IOS golf scorecard app as well.</p>
+            I decided to create a simple program that acts as a golf scorecard. The program allows for
+            the user to enter their score on each hole, one-by-one, for 18 holes of golf.
+            Then, I decided to further my app developement skills and create an IOS golf scorecard app as well.</p>
           <p>Technology: Ruby, Xcode, Swift, SwiftUI</p>
         </section>
         <section className="project">

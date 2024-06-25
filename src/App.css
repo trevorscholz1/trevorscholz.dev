@@ -20,7 +20,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 8px;
+  height: 6px;
   background-color: var(--accent-color);
   z-index: 9999;
   transition: width 0.1s ease;
