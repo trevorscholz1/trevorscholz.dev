@@ -120,8 +120,9 @@ function App() {
             The script then simulates game outcomes and calculates the probability of each team winning based on the predicted scores. 
             It identifies potential betting opportunities by comparing the simulated probabilities with the odds offered by bookmakers, 
             highlighting bets with positive expected value (+EV). The predicted bets are saved to a CSV file for further analysis or execution.
-            The data the neural network is trained on is obtained using web scraping.</p>
-            <p>Technology: Jupyter Notebook, Python, Pandas, Playwright, BeautifulSoup, Matplotlib, NumPy, Scikit-Learn, TensorFlow</p>
+            The data the neural network is trained on is obtained using web scraping. Some file handling is also 
+            implemented with C.</p>
+            <p>Technology: C, Jupyter Notebook, Python, Pandas, Playwright, BeautifulSoup, Matplotlib, NumPy, Scikit-Learn, TensorFlow</p>
         </section>
         {/* <section className="project">
           <h2>Daily Stockz</h2>
