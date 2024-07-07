@@ -115,14 +115,14 @@ function App() {
           </a>
           <p>Sports betting, when it comes down to it, is all math.
             I have created this Python script that utilizes machine learning techniques to predict the outcomes of various sports events, 
-            including soccer, baseball, basketball, football, and hockey games. It fetches data from an odds API, preprocesses the data, 
+            including soccer, baseball, basketball, football, and hockey games. It fetches data from a sports API, preprocesses the data, 
             trains a neural network model using TensorFlow and Keras, and generates predictions for upcoming games. 
             The script then simulates game outcomes and calculates the probability of each team winning based on the predicted scores. 
             It identifies potential betting opportunities by comparing the simulated probabilities with the odds offered by bookmakers, 
-            highlighting bets with positive expected value (+EV). The predicted bets are saved to a CSV file for further analysis or execution.
-            The data the neural network is trained on is obtained using web scraping. Some file handling is also 
+            highlighting bets with positive expected value (+EV). The predicted bets are saved to a CSV file for use on the Daily Lockz website.
+            The data the neural network is trained on is obtained using web scraping and all saved in a PostgreSQL Database. Some file handling is also 
             implemented with C.</p>
-            <p>Technology: C, Jupyter Notebook, Python, Pandas, Playwright, BeautifulSoup, Matplotlib, NumPy, Scikit-Learn, TensorFlow</p>
+            <p>Technology: C, PostgreSQL, Jupyter Notebook, Python, Pandas, Playwright, BeautifulSoup, Matplotlib, NumPy, Scikit-Learn, TensorFlow</p>
         </section>
         {/* <section className="project">
           <h2>Daily Stockz</h2>
@@ -150,7 +150,7 @@ function App() {
           </a>
           <p>Clusterfy uses K-Means clustering from Scikit-Learn to group songs from a specified artist into clusters. 
             The clusters are then displayed in a pandas dataframe, and saved as a csv to be used in Xcode to deploy to the app.
-            Clusterfy supports over 100 of today's top artists for users to view, and many more coming in the future. Users can also
+            Clusterfy supports over 300 of today's top artists for users to view, and many more coming in the future. Users can also
             click on a song directly in the app to listen to it on spotify and add it to their own playlists.</p>
           <p>Technology: Spotipy, Pandas, Python, Scikit-Learn, Swift, SwiftUI</p>
         </section>
