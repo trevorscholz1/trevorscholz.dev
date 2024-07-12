@@ -60,7 +60,7 @@ function App() {
             <a href="https://github.com/trevorscholz1/Portfolio" target="_blank" rel="noopener noreferrer" aria-label="Github">
               <img src="/github-icon.png" alt="Github" className="social-icon" />
             </a>
-            <a href="https://www.linkedin.com/in/trevor-scholz-014794258/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/trevor-scholz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <img src="/linkedin-icon.png" alt="LinkedIn" className="social-icon" />
             </a>
             <a href="mailto:trevorscholz1@icloud.com" aria-label="Email">
