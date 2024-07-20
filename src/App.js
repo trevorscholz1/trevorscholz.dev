@@ -106,9 +106,15 @@ function App() {
           <p>The Daily Lockz Website presents predicted sports scores for all major sports.
             It uses the advanced neural network described below to allow users to view trustworthy predictions
             of their favorite upcoming games. It provides an easy to view UI which allows users to very easily
-            find the game their looking for, and what machine learning expects the final score to be.
+            find the game they're looking for, and what machine learning expects the final score to be.
           </p>
           <p>Technology: React, NodeJS, JavaScript, HTML, CSS, Netlify</p>
+
+          <div style={{ textAlign: 'center', marginTop: '20px' , paddingTop: '10px'}}>
+            <a href="https://dailylockz.netlify.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#fff', backgroundColor: '#007bff', padding: '10px 20px', borderRadius: '5px', fontWeight: 'bold' }}>
+              Visit Daily Lockz Website
+            </a>
+          </div>
           <h3>Backend</h3>
           <a href="https://github.com/trevorscholz1/Portfolio/tree/main/daily_lockz" target="_blank" rel="noopener noreferrer">
             <img src="/DailyLockzModelWeb.png" alt="Daily Lockz Screenshot" className="project-icon"/>
@@ -185,7 +191,7 @@ function App() {
         </section>
         </main>
       <footer>
-        <p>Trevor Scholz Portfolio June 2024</p>
+        <p>Trevor Scholz Portfolio July 2024</p>
       </footer>
     </div>
   );
