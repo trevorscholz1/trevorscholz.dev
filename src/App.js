@@ -214,7 +214,7 @@ function App() {
             images={projectImages.dailyStockz}
             link="https://github.com/trevorscholz1/Portfolio/tree/main/daily_stockz"
           />
-          <p>daily stockz yuh</p>
+          <p>Daily Stockz</p>
           <p>Technology: Python, yfinance, Scikit-Learn</p>
         </section>
         <section className="project">
