@@ -1,0 +1,38 @@
+Explore the Universe with AstroWorld
+
+AstroWorld is your personal planetarium and celestial guide, bringing the wonders of the night sky 
+to your fingertips. Whether you’re a casual stargazer or a dedicated astronomer, AstroWorld offers 
+an immersive experience tailored to your location and time.
+
+Key Features:
+
+• Real-time Sky Map – Visualize the night sky exactly as it appears from your location
+
+• Location-Based Viewing – Automatically detect or manually set your position on Earth
+
+• Star and Planet Search – Easily find and learn about stars, planets, and celestial objects
+
+• In-Depth Information – Explore detailed data like spectral types, magnitudes, and coordinates
+
+• Time-Sensitive Accuracy – Watch the sky shift as the hours pass with real-time updates
+
+Learn and Discover:
+
+AstroWorld is more than a visual tool. It helps you understand the sky above. 
+Access a built-in glossary to learn about astronomical concepts such as magnitudes, spectral types, 
+right ascension, and declination.
+
+Easy to Use:
+
+1. Allow location access or set your location manually
+
+2. Navigate the sky with intuitive pan and zoom controls
+
+3. Tap on stars or planets to view detailed information
+
+4. Use the search feature to find specific celestial objects
+
+Powered by Precision:
+
+AstroWorld uses data from the HYG Catalogue and the Skyfield Python library to ensure accuracy and 
+reliability.

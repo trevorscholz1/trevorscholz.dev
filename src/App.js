@@ -1,6 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import "./App.css";
+
+const TextFileDisplay = () => {
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    fetch("/AppScreenshots/AstroWorldScreenshots/about.txt")
+      .then((response) => response.text())
+      .then((data) => setText(data));
+  }, []);
+
+  return <pre>{text}</pre>;
+};
 
 function ImageCarousel({ images, link }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,7 +29,9 @@ function ImageCarousel({ images, link }) {
 
   const prevSlide = (e) => {
     e.stopPropagation();
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
   };
 
   const handleImageLoad = () => {
@@ -29,12 +43,17 @@ function ImageCarousel({ images, link }) {
       <button onClick={prevSlide} className="carousel-button prev">
         <ChevronLeft />
       </button>
-      <a href={link} target="_blank" rel="noopener noreferrer" className="carousel-image-link">
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="carousel-image-link"
+      >
         <div className="image-wrapper">
           <img
             src={images[currentIndex]}
             alt={`Project screenshot ${currentIndex + 1}`}
-            className={`project-icon ${imageLoaded ? 'loaded' : ''}`}
+            className={`project-icon ${imageLoaded ? "loaded" : ""}`}
             onLoad={handleImageLoad}
           />
           {!imageLoaded && <div className="image-placeholder" />}
@@ -47,7 +66,7 @@ function ImageCarousel({ images, link }) {
         {images.map((_, index) => (
           <span
             key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            className={`dot ${index === currentIndex ? "active" : ""}`}
             onClick={(e) => {
               e.stopPropagation();
               setCurrentIndex(index);
@@ -65,63 +84,62 @@ function App() {
 
   useEffect(() => {
     if (darkMode) {
-      document.body.classList.add('dark-mode');
+      document.body.classList.add("dark-mode");
     } else {
-      document.body.classList.remove('dark-mode');
+      document.body.classList.remove("dark-mode");
     }
   }, [darkMode]);
 
   useEffect(() => {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollTop;
-      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scroll = `${totalScroll / windowHeight * 100}%`;
+      const windowHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scroll = `${(totalScroll / windowHeight) * 100}%`;
 
       setScrollProgress(scroll);
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    document.body.classList.toggle('light-mode');
+    document.body.classList.toggle("light-mode");
   };
 
   const projectImages = {
     astronomy: [
-      '/AstronomyScreenshots/ss1.png',
-      '/AstronomyScreenshots/ss2.png',
-      '/AstronomyScreenshots/ss3.png',
+      "/AppScreenshots/AstroWorldScreenshots/screen_1.png",
+      "/AppScreenshots/AstroWorldScreenshots/screen_2.png",
+      "/AppScreenshots/AstroWorldScreenshots/screen_3.png",
+      "/AppScreenshots/AstroWorldScreenshots/screen_4.png",
     ],
     dailyLockz: [
-      '/DailyLockzScreenshots/ss1.png',
-      '/DailyLockzScreenshots/ss2.png',
-      '/DailyLockzScreenshots/ss3.png'
+      "/DailyLockzScreenshots/ss1.png",
+      "/DailyLockzScreenshots/ss2.png",
+      "/DailyLockzScreenshots/ss3.png",
     ],
     dailyStockz: [
-      '/DailyStockzScreenshots/ss1.png',
-      '/DailyStockzScreenshots/ss2.png',
-      '/DailyStockzScreenshots/ss3.png'
+      "/DailyStockzScreenshots/ss1.png",
+      "/DailyStockzScreenshots/ss2.png",
+      "/DailyStockzScreenshots/ss3.png",
     ],
     clusterJam: [
-      '/ClusterJamScreenshots/ss1.png',
-      '/ClusterJamScreenshots/ss2.png',
-      '/ClusterJamScreenshots/ss3.png'
+      "/ClusterJamScreenshots/ss1.png",
+      "/ClusterJamScreenshots/ss2.png",
+      "/ClusterJamScreenshots/ss3.png",
     ],
     holeInOne: [
-      '/HoleInOneScreenshots/ss1.png',
-      '/HoleInOneScreenshots/ss2.png',
-      '/HoleInOneScreenshots/ss3.png'
+      "/HoleInOneScreenshots/ss1.png",
+      "/HoleInOneScreenshots/ss2.png",
+      "/HoleInOneScreenshots/ss3.png",
     ],
-    poker: [
-      '/PokerScreenshot.png',
-    ],
-    lego: [
-      '/LegoScreenshot.png',
-    ]
+    poker: ["/PokerScreenshot.png"],
+    lego: ["/LegoScreenshot.png"],
   };
 
   return (
@@ -130,36 +148,69 @@ function App() {
       <header className="App-header">
         <h1>Trevor Scholz</h1>
         <button onClick={toggleDarkMode} className="theme-toggle">
-          {darkMode ? '☀️' : '🌙'}
+          {darkMode ? "☀️" : "🌙"}
         </button>
       </header>
       <main>
         <section className="about-me">
           <h2>About Me</h2>
           <p>
-            Hey, I'm Trevor, a Computer Science student at the University of Maryland,
-            where I specialize in Data Science and get to build on my love for stargazing through my Astronomy minor.
-            More specifically, I love learning and building my skills in the fields of machine learning, statistics, and data science.
-            I always enjoy trying to merge my passions with my projects.
-            Whether it's developing sports betting models that actually work, clustering Spotify tracks by mood, or creating a poker bot
-            to beat my friends, I love implementing my personal interests into my projects to make
-            them unique and useful. Believe it or not, I am not always immersed in coding and developing. I enjoy playing and watching my favorite sports
-            which include basketball, soccer, and golf. I also love listening to music and sometimes even making my own.
-            And if the night is clear? I love looking up at the stars when I get the chance and try to grasp how unreal
-            our universe really is. Feel free to get in touch!
+            Hey, I'm Trevor, a Computer Science student at the University of
+            Maryland, where I specialize in Data Science and get to build on my
+            love for stargazing through my Astronomy minor. More specifically, I
+            love learning and building my skills in the fields of machine
+            learning, statistics, and data science. I always enjoy trying to
+            merge my passions with my projects. Whether it's developing sports
+            betting models that actually work, clustering Spotify tracks by
+            mood, or creating a poker bot to beat my friends, I love
+            implementing my personal interests into my projects to make them
+            unique and useful. Believe it or not, I am not always immersed in
+            coding and developing. I enjoy playing and watching my favorite
+            sports which include basketball, soccer, and golf. I also love
+            listening to music and sometimes even making my own. And if the
+            night is clear? I love looking up at the stars when I get the chance
+            and try to grasp how unreal our universe really is. Feel free to get
+            in touch!
           </p>
           <div className="social-links">
-            <a href="https://github.com/trevorscholz1/Portfolio" target="_blank" rel="noopener noreferrer" aria-label="Github">
-              <img src="/github-icon.png" alt="Github" className="social-icon" />
+            <a
+              href="https://github.com/trevorscholz1/Portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Github"
+            >
+              <img
+                src="/github-icon.png"
+                alt="Github"
+                className="social-icon"
+              />
             </a>
-            <a href="https://www.linkedin.com/in/trevor-scholz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <img src="/linkedin-icon.png" alt="LinkedIn" className="social-icon" />
+            <a
+              href="https://www.linkedin.com/in/trevor-scholz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <img
+                src="/linkedin-icon.png"
+                alt="LinkedIn"
+                className="social-icon"
+              />
             </a>
             <a href="mailto:trevorscholz1@icloud.com" aria-label="Email">
               <img src="/email-icon.png" alt="Email" className="social-icon" />
             </a>
-            <a href="https://github.com/trevorscholz1/Portfolio/blob/main/TrevorScholzResume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">
-              <img src="/resume-icon.png" alt="Resume" className="social-icon" />
+            <a
+              href="https://github.com/trevorscholz1/Portfolio/blob/main/TrevorScholzResume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Resume"
+            >
+              <img
+                src="/resume-icon.png"
+                alt="Resume"
+                className="social-icon"
+              />
             </a>
           </div>
         </section>
@@ -170,17 +221,11 @@ function App() {
             images={projectImages.astronomy}
             link="https://github.com/trevorscholz1/Portfolio/tree/main/astronomy"
           />
-          <p>AstroWorld is an app I have created in Xcode, Swift, and SwiftUI. It utilizes NASA's open API's to create an
-            all in one astronomy app for astronomers of all interest levels to get detailed information right from their phone.
-            It gathers data from complex API's and displays them in an easy to view UI for users. My favorite feature displayed above
-            is displaying NASA's Astronomy Picture of the Day. This Python script demonstrates a comprehensive approach to astronomical data analysis and visualization.
-            It uses libraries such as NumPy, Pandas, Matplotlib, and Astropy to process and display information about different stars.
-            The code begins by creating a DataFrame with star names, coordinates (Right Ascension and Declination), and magnitudes.
-            It then leverages Astropy's SkyCoord to convert string representations of celestial coordinates into astronomical objects,
-            enabling precise calculations. A scatter plot is generated using Matplotlib, visually representing the stars' positions
-            in the sky, with point sizes reflecting their brightness. The script also performs data analysis, identifying the
-            brightest star in the set and calculating the angular separation between two specific stars.</p>
-          <p>Technology: Xcode, Swift, SwiftUI, RESTful APIS, Jupyter Notebook, Python, Pandas, NumPy, Matplotlib, Astropy</p>
+          <TextFileDisplay />
+          <p>
+            Technology: Xcode, Swift, SwiftUI, Skyfield, Jupyter Notebook,
+            Python, Pandas, NumPy, 3D Objects, Firebase
+          </p>
         </section>
         <section className="project">
           <h2>Daily Lockz</h2>
@@ -188,22 +233,54 @@ function App() {
             images={projectImages.dailyLockz}
             link="https://github.com/trevorscholz1/Portfolio/tree/main/daily_lockz"
           />
-          <p>The Daily Lockz Website presents predicted sports scores for all major sports.
-            It uses the advanced neural network described below to allow users to view trustworthy predictions
-            of their favorite upcoming games. It provides an easy to view UI which allows users to very easily
-            find the game they're looking for, and what machine learning expects the final score to be. Sports betting, when it comes down to it, is all math.
-            I have created this Python script that utilizes machine learning techniques to predict the outcomes of various sports events,
-            including soccer, baseball, basketball, football, and hockey games. It fetches data from a sports API, preprocesses the data,
-            trains a neural network model using TensorFlow and Keras, and generates predictions for upcoming games.
-            The script then simulates game outcomes and calculates the probability of each team winning based on the predicted scores.
-            It identifies potential betting opportunities by comparing the simulated probabilities with the odds offered by bookmakers,
-            highlighting bets with positive expected value (+EV). The predicted bets are saved to a CSV file for use on the Daily Lockz website.
-            The data the neural network is trained on is obtained using web scraping and all saved in a PostgreSQL Database. Some file handling is also
+          <p>
+            The Daily Lockz Website presents predicted sports scores for all
+            major sports. It uses the advanced neural network described below to
+            allow users to view trustworthy predictions of their favorite
+            upcoming games. It provides an easy to view UI which allows users to
+            very easily find the game they're looking for, and what machine
+            learning expects the final score to be. Sports betting, when it
+            comes down to it, is all math. I have created this Python script
+            that utilizes machine learning techniques to predict the outcomes of
+            various sports events, including soccer, baseball, basketball,
+            football, and hockey games. It fetches data from a sports API,
+            preprocesses the data, trains a neural network model using
+            TensorFlow and Keras, and generates predictions for upcoming games.
+            The script then simulates game outcomes and calculates the
+            probability of each team winning based on the predicted scores. It
+            identifies potential betting opportunities by comparing the
+            simulated probabilities with the odds offered by bookmakers,
+            highlighting bets with positive expected value (+EV). The predicted
+            bets are saved to a CSV file for use on the Daily Lockz website. The
+            data the neural network is trained on is obtained using web scraping
+            and all saved in a PostgreSQL Database. Some file handling is also
             implemented with C.
           </p>
-          <p>Technology: React, NodeJS, JavaScript, HTML, CSS, Netlify, C, PostgreSQL, Jupyter Notebook, Python, Pandas, Playwright, BeautifulSoup, Matplotlib, NumPy, Scikit-Learn, TensorFlow</p>
-          <div style={{ textAlign: 'center', marginTop: '20px', paddingTop: '10px' }}>
-            <a href="https://dailylockz.netlify.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#fff', backgroundColor: '#007bff', padding: '10px 20px', borderRadius: '5px', fontWeight: 'bold' }}>
+          <p>
+            Technology: React, NodeJS, JavaScript, HTML, CSS, Netlify, C,
+            PostgreSQL, Jupyter Notebook, Python, Pandas, Playwright,
+            BeautifulSoup, Matplotlib, NumPy, Scikit-Learn, TensorFlow
+          </p>
+          <div
+            style={{
+              textAlign: "center",
+              marginTop: "20px",
+              paddingTop: "10px",
+            }}
+          >
+            <a
+              href="https://dailylockz.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "#fff",
+                backgroundColor: "#007bff",
+                padding: "10px 20px",
+                borderRadius: "5px",
+                fontWeight: "bold",
+              }}
+            >
               Visit Daily Lockz Website
             </a>
           </div>
@@ -223,13 +300,39 @@ function App() {
             images={projectImages.clusterJam}
             link="https://github.com/trevorscholz1/Portfolio/tree/main/spotify"
           />
-          <p>Clusterfy uses K-Means clustering from Scikit-Learn to group songs from a specified artist into clusters.
-            The clusters are then displayed in a pandas dataframe, and saved as a csv to be used in Xcode to deploy to the app.
-            Clusterfy supports over 300 of today's top artists for users to view, and many more coming in the future. Users can also
-            click on a song directly in the app to listen to it on spotify and add it to their own playlists.</p>
-          <p>Technology: Spotipy, Spotify IOS, ShazamKit, Pandas, Python, Scikit-Learn, Swift, SwiftUI</p>
-          <div style={{ textAlign: 'center', marginTop: '20px', paddingTop: '10px' }}>
-            <a href="https://apps.apple.com/us/app/clusterjam/id6557030793" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#fff', backgroundColor: '#007bff', padding: '10px 20px', borderRadius: '5px', fontWeight: 'bold' }}>
+          <p>
+            Clusterfy uses K-Means clustering from Scikit-Learn to group songs
+            from a specified artist into clusters. The clusters are then
+            displayed in a pandas dataframe, and saved as a csv to be used in
+            Xcode to deploy to the app. Clusterfy supports over 300 of today's
+            top artists for users to view, and many more coming in the future.
+            Users can also click on a song directly in the app to listen to it
+            on spotify and add it to their own playlists.
+          </p>
+          <p>
+            Technology: Spotipy, Spotify IOS, ShazamKit, Pandas, Python,
+            Scikit-Learn, Swift, SwiftUI
+          </p>
+          <div
+            style={{
+              textAlign: "center",
+              marginTop: "20px",
+              paddingTop: "10px",
+            }}
+          >
+            <a
+              href="https://apps.apple.com/us/app/clusterjam/id6557030793"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "#fff",
+                backgroundColor: "#007bff",
+                padding: "10px 20px",
+                borderRadius: "5px",
+                fontWeight: "bold",
+              }}
+            >
               Visit ClusterJam
             </a>
           </div>
@@ -240,45 +343,80 @@ function App() {
             images={projectImages.holeInOne}
             link="https://github.com/trevorscholz1/Portfolio/tree/main/golf"
           />
-          <p>First, I wanted to develop my skills in Ruby, which was a new language to me.
-            I decided to create a simple program that acts as a golf scorecard. The program allows for
-            the user to enter their score on each hole, one-by-one, for 18 holes of golf.
-            Then, I decided to further my app developement skills and create an IOS golf scorecard app as well.</p>
+          <p>
+            First, I wanted to develop my skills in Ruby, which was a new
+            language to me. I decided to create a simple program that acts as a
+            golf scorecard. The program allows for the user to enter their score
+            on each hole, one-by-one, for 18 holes of golf. Then, I decided to
+            further my app developement skills and create an IOS golf scorecard
+            app as well.
+          </p>
           <p>Technology: Ruby, Xcode, Swift, SwiftUI</p>
         </section>
         <section className="project">
           <h2>Extras</h2>
           <section className="sub-project">
             <h3>Poker</h3>
-            <a href="https://github.com/trevorscholz1/Portfolio/tree/main/extras/poker" target="_blank" rel="noopener noreferrer">
-              <img src="/PokerScreenshot.png" alt="Poker Screenshot" className="project-icon" />
+            <a
+              href="https://github.com/trevorscholz1/Portfolio/tree/main/extras/poker"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/PokerScreenshot.png"
+                alt="Poker Screenshot"
+                className="project-icon"
+              />
             </a>
-            <p>As you might have already been able to tell from my previous projects, I have a heavy interest in statistics
-              and data science. So I decided to combine this with one of my favorite games: Poker. A winning Poker player
-              will often have an idea of their chance of winning before making a decision. This program, created in Java, will
-              quickly calculate your probability of winning the hand (based on your cards and the community cards), and determine
-              which of the three decisions is best for you: fold, call, or raise.
+            <p>
+              As you might have already been able to tell from my previous
+              projects, I have a heavy interest in statistics and data science.
+              So I decided to combine this with one of my favorite games: Poker.
+              A winning Poker player will often have an idea of their chance of
+              winning before making a decision. This program, created in Java,
+              will quickly calculate your probability of winning the hand (based
+              on your cards and the community cards), and determine which of the
+              three decisions is best for you: fold, call, or raise.
             </p>
             <p>Technology: Java</p>
           </section>
           <section className="sub-project">
             <h3>LEGO</h3>
-            <a href="https://github.com/trevorscholz1/Portfolio/tree/main/extras/lego" target="_blank" rel="noopener noreferrer">
-              <img src="/LegoScreenshot.png" alt="LEGO Screenshot" className="project-icon" />
+            <a
+              href="https://github.com/trevorscholz1/Portfolio/tree/main/extras/lego"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/LegoScreenshot.png"
+                alt="LEGO Screenshot"
+                className="project-icon"
+              />
             </a>
-            <p>In Rust, I created a LEGO Set Randomizer to build my ability to work with APIs and handle data in Rust.
-              It connects to the Rebrickable API to fetch information about LEGO sets, then randomly selects and displays details
-              about one set. The program utilizes asynchronous programming with tokio and reqwest for efficient API requests,
-              employs serde for JSON deserialization, and demonstrates secure practices by managing the API key through environment
-              variables. Upon execution, it presents comprehensive information about the chosen LEGO set, including its set number,
-              name, release year, theme ID, part count, and image URL if available.</p>
+            <p>
+              In Rust, I created a LEGO Set Randomizer to build my ability to
+              work with APIs and handle data in Rust. It connects to the
+              Rebrickable API to fetch information about LEGO sets, then
+              randomly selects and displays details about one set. The program
+              utilizes asynchronous programming with tokio and reqwest for
+              efficient API requests, employs serde for JSON deserialization,
+              and demonstrates secure practices by managing the API key through
+              environment variables. Upon execution, it presents comprehensive
+              information about the chosen LEGO set, including its set number,
+              name, release year, theme ID, part count, and image URL if
+              available.
+            </p>
             <p>Technology: Rust, Tokio, Serde, RESTful APIS</p>
           </section>
         </section>
       </main>
       <footer>
-  <p>Trevor Scholz Portfolio {new Date().toLocaleString('default', { month: 'long' })} {new Date().getFullYear()}</p>
-</footer>
+        <p>
+          Trevor Scholz Portfolio{" "}
+          {new Date().toLocaleString("default", { month: "long" })}{" "}
+          {new Date().getFullYear()}
+        </p>
+      </footer>
     </div>
   );
 }
