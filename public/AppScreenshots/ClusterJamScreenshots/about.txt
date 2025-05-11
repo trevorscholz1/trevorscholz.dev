@@ -1,0 +1,26 @@
+About ClusterJam
+
+ClusterJam is a music discovery and playlist management app that helps you curate your perfect music collection. Whether you're an Apple Music or Spotify user, ClusterJam enhances how you discover new songs and manage your existing playlists.
+
+Key Features:
+
+Music Service Integration - Seamlessly connect with your preferred music streaming platform. ClusterJam works with both Apple Music and Spotify Premium, giving you flexibility to use your favorite service.
+Playlist Enhancement - Discover new music that matches your taste with our intelligent recommendation system. ClusterJam analyzes your existing playlists and suggests similar tracks you might love, helping you expand your musical horizons without endless searching.
+Smart Curation Tools - Our intuitive swipe interface makes playlist management fun and efficient:
+
+Swipe right to add recommended songs to your playlists
+Swipe left to remove songs from existing playlists
+Create perfectly curated collections with just a few gestures
+
+Daily Discovery Limits: ClusterJam encourages thoughtful music curation with daily swipe limits that refresh every 10 hours, preventing playlist fatigue and ensuring quality over quantity in your music collection.
+
+Premium Features -
+Upgrade to ClusterJam Premium to unlock enhanced capabilities and higher swipe limits, giving you more opportunities to discover and curate your music library.
+
+How It Works -
+1. Connect your Apple Music or Spotify account
+2. Select a playlist you want to enhance or trim
+3. Swipe through recommended tracks or existing songs
+4. Confirm your selection and save changes to your library
+
+ClusterJam combines the fun of swiping through songs, with an advanced recommendation engine to create a perfect app to manage your music library.

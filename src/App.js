@@ -129,9 +129,10 @@ function App() {
       "/DailyStockzScreenshots/ss3.png",
     ],
     clusterJam: [
-      "/ClusterJamScreenshots/ss1.png",
-      "/ClusterJamScreenshots/ss2.png",
-      "/ClusterJamScreenshots/ss3.png",
+      "/AppScreenshots/ClusterJamScreenshots/screen_1.png",
+      "/AppScreenshots/ClusterJamScreenshots/screen_2.png",
+      "/AppScreenshots/ClusterJamScreenshots/screen_3.png",
+      "/AppScreenshots/ClusterJamScreenshots/screen_4.png",
     ],
     holeInOne: [
       "/HoleInOneScreenshots/ss1.png",
@@ -214,7 +215,7 @@ function App() {
             </a>
           </div>
         </section>
-        <h1>Click on the images to view the code on my Github!</h1>
+        <h1>Click on the images to view the code on my Github</h1>
         <section className="project">
           <h2>Astronomy</h2>
           <ImageCarousel
