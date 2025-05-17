@@ -2,14 +2,18 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./App.css";
 
-const TextFileDisplay = () => {
+const TextFileDisplay = ({ file }) => {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    fetch("/AppScreenshots/AstroWorldScreenshots/about.txt")
-      .then((response) => response.text())
-      .then((data) => setText(data));
-  }, []);
+    fetch(file)
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to fetch text file");
+        return response.text();
+      })
+      .then((data) => setText(data))
+      .catch((err) => setText("Error loading file."));
+  }, [file]);
 
   return <pre>{text}</pre>;
 };
@@ -162,17 +166,37 @@ function App() {
             love learning and building my skills in the fields of machine
             learning, statistics, and data science. I always enjoy trying to
             merge my passions with my projects. Whether it's developing sports
-            betting models that actually work, clustering Spotify tracks by
-            mood, or creating a poker bot to beat my friends, I love
+            betting models, developing apps, or creating a poker bot, I love
             implementing my personal interests into my projects to make them
             unique and useful. Believe it or not, I am not always immersed in
             coding and developing. I enjoy playing and watching my favorite
             sports which include basketball, soccer, and golf. I also love
-            listening to music and sometimes even making my own. And if the
-            night is clear? I love looking up at the stars when I get the chance
-            and try to grasp how unreal our universe really is. Feel free to get
-            in touch!
+            listening to music and sometimes even making my own. Don't hesitate
+            to reach out!
           </p>
+          <div
+            style={{
+              textAlign: "center",
+              marginTop: "20px",
+              paddingTop: "10px",
+            }}
+          >
+            <a
+              href="https://linktr.ee/trevorscholz1"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "#fff",
+                backgroundColor: "#007bff",
+                padding: "10px 20px",
+                borderRadius: "5px",
+                fontWeight: "bold",
+              }}
+            >
+              LinkTree
+            </a>
+          </div>
           <div className="social-links">
             <a
               href="https://github.com/trevorscholz1/Portfolio"
@@ -222,10 +246,12 @@ function App() {
             images={projectImages.astronomy}
             link="https://github.com/trevorscholz1/Portfolio/tree/main/astronomy"
           />
-          <TextFileDisplay />
+          <div className="text-file">
+            <TextFileDisplay file="/AppScreenshots/AstroWorldScreenshots/about.txt" />
+          </div>
           <p>
-            Technology: Xcode, Swift, SwiftUI, Skyfield, Jupyter Notebook,
-            Python, Pandas, NumPy, 3D Objects, Firebase
+            Technology: Swift, SwiftUI, Skyfield, Jupyter Notebook, Python,
+            Pandas, NumPy, 3D Objects, Firebase
           </p>
         </section>
         <section className="project">
@@ -301,42 +327,13 @@ function App() {
             images={projectImages.clusterJam}
             link="https://github.com/trevorscholz1/Portfolio/tree/main/spotify"
           />
+          <div className="text-file">
+            <TextFileDisplay file="/AppScreenshots/ClusterJamScreenshots/about.txt" />
+          </div>
           <p>
-            Clusterfy uses K-Means clustering from Scikit-Learn to group songs
-            from a specified artist into clusters. The clusters are then
-            displayed in a pandas dataframe, and saved as a csv to be used in
-            Xcode to deploy to the app. Clusterfy supports over 300 of today's
-            top artists for users to view, and many more coming in the future.
-            Users can also click on a song directly in the app to listen to it
-            on spotify and add it to their own playlists.
-          </p>
-          <p>
-            Technology: Spotipy, Spotify IOS, ShazamKit, Pandas, Python,
+            Technology: MusicKit, Spotify Web API, ShazamKit, Pandas, Python,
             Scikit-Learn, Swift, SwiftUI
           </p>
-          <div
-            style={{
-              textAlign: "center",
-              marginTop: "20px",
-              paddingTop: "10px",
-            }}
-          >
-            <a
-              href="https://apps.apple.com/us/app/clusterjam/id6557030793"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                textDecoration: "none",
-                color: "#fff",
-                backgroundColor: "#007bff",
-                padding: "10px 20px",
-                borderRadius: "5px",
-                fontWeight: "bold",
-              }}
-            >
-              Visit ClusterJam
-            </a>
-          </div>
         </section>
         <section className="project">
           <h2>HoleInOne</h2>
