@@ -15,7 +15,7 @@ const TextFileDisplay = ({ file }) => {
       .catch((err) => setText("Error loading file."));
   }, [file]);
 
-  return <pre>{text}</pre>;
+  return <p>{text}</p>;
 };
 
 function ImageCarousel({ images, link }) {
@@ -123,28 +123,20 @@ function App() {
       "/AppScreenshots/AstroWorldScreenshots/screen_4.png",
     ],
     dailyLockz: [
-      "/DailyLockzScreenshots/ss1.png",
-      "/DailyLockzScreenshots/ss2.png",
-      "/DailyLockzScreenshots/ss3.png",
+      "AppScreenshots/DailyLockzScreenshots/ss1.png",
+      "AppScreenshots//DailyLockzScreenshots/ss2.png",
+      "AppScreenshots//DailyLockzScreenshots/ss3.png",
     ],
-    dailyStockz: [
-      "/DailyStockzScreenshots/ss1.png",
-      "/DailyStockzScreenshots/ss2.png",
-      "/DailyStockzScreenshots/ss3.png",
-    ],
+    dailyStockz: ["AppScreenshots/DailyStockzScreenshots/screen_1.png"],
     clusterJam: [
       "/AppScreenshots/ClusterJamScreenshots/screen_1.png",
       "/AppScreenshots/ClusterJamScreenshots/screen_2.png",
       "/AppScreenshots/ClusterJamScreenshots/screen_3.png",
       "/AppScreenshots/ClusterJamScreenshots/screen_4.png",
     ],
-    holeInOne: [
-      "/HoleInOneScreenshots/ss1.png",
-      "/HoleInOneScreenshots/ss2.png",
-      "/HoleInOneScreenshots/ss3.png",
-    ],
-    poker: ["/PokerScreenshot.png"],
+    holeInOne: ["AppScreenshots/HoleInOneScreenshots/screen_1.png"],
     lego: ["/LegoScreenshot.png"],
+    poker: ["/PokerScreenshot.png"],
   };
 
   return (
