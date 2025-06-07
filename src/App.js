@@ -153,18 +153,15 @@ function App() {
           <h2>About Me</h2>
           <p>
             Hey, I'm Trevor, a Computer Science student at the University of
-            Maryland, where I specialize in Data Science and get to build on my
-            love for stargazing through my Astronomy minor. More specifically, I
-            love learning and building my skills in the fields of machine
-            learning, statistics, and data science. I always enjoy trying to
-            merge my passions with my projects. Whether it's developing sports
-            betting models, developing apps, or creating a poker bot, I love
-            implementing my personal interests into my projects to make them
-            unique and useful. Believe it or not, I am not always immersed in
-            coding and developing. I enjoy playing and watching my favorite
-            sports which include basketball, soccer, and golf. I also love
-            listening to music and sometimes even making my own. Don't hesitate
-            to reach out!
+            Maryland, where I specialize in Data Science with an Astronomy
+            minor. More specifically, I love learning and building my skills in
+            the fields of machine learning, statistics, and data science. On top
+            of this, I enjoy creating mobile and web apps where I try to merge
+            my passions with my projects, and I have several apps released on
+            the iOS App Store. Outside of developement, I enjoy playing and
+            watching my favorite sports which include basketball, soccer, and
+            golf, and love listening to music, sometimes even making my own.
+            Don't hesitate to reach out!
           </p>
           <div
             style={{
