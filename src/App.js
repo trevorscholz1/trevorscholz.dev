@@ -152,7 +152,7 @@ function App() {
         <section className="about-me">
           <h2>About Me</h2>
           <p>
-            Hey, I'm Trevor, a Computer Science student at the University of
+            I'm Trevor, a Computer Science student at the University of
             Maryland, where I specialize in Data Science with an Astronomy
             minor. More specifically, I love learning and building my skills in
             the fields of machine learning, statistics, and data science. On top
